@@ -66,7 +66,16 @@
 -- COMMAND ----------
 
 -- TODO
-<FILL_IN> "${DA.paths.kafka_events}" 
+CREATE TABLE if not exists events_json
+  (key BINARY,
+   offset BIGINT,
+   partition INT,
+   timestamp BIGINT,
+   topic STRING,
+   value BINARY)
+   USING
+   json 
+   LOCATION  "${DA.paths.kafka_events}" 
 
 -- COMMAND ----------
 

@@ -90,8 +90,8 @@ SELECT count(*) FROM users_dirty WHERE email IS NULL;
 -- MAGIC from pyspark.sql.functions import col
 -- MAGIC usersDF = spark.read.table("users_dirty")
 -- MAGIC 
--- MAGIC usersDF.selectExpr("count_if(email IS NULL)")
--- MAGIC usersDF.where(col("email").isNull()).count()
+-- MAGIC display(usersDF.selectExpr("count_if(email IS NULL)"))
+-- MAGIC #usersDF.where(col("email").isNull()).count()
 
 -- COMMAND ----------
 
